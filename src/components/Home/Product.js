@@ -6,7 +6,7 @@ function Product({ product, buyProduct }) {
 	return (
 		<div className="m-3">
 			<Card style={{ width: '18rem' }}>
-				<Card.Img variant="top" src={image} />
+				<Card.Img variant="top" src={image} style={{ height: '250px' }} />
 				<Card.Body>
 					<Card.Title>{name}</Card.Title>
 					<div className="d-flex justify-content-between mt-5">
