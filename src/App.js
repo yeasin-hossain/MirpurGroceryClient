@@ -4,7 +4,7 @@ import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 import Order from './components/Order/Order';
 import PrivateRoute from './components/Routes/PrivateRoute';
-
+import { ToastContainer } from 'react-toastify';
 function App() {
 	return (
 		<div className="container">
@@ -22,6 +22,7 @@ function App() {
 					</PrivateRoute>
 				</Switch>
 			</Router>
+			<ToastContainer />
 		</div>
 	);
 }
