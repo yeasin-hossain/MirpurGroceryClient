@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link, Route } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import Order from '../Order/Order';
 import Spinner from '../Spinner/Spinner';
 import AddProduct from './AddProduct';
@@ -14,8 +15,22 @@ function Admin() {
 			.then((res) => setAllOrder(res.data))
 			.catch((err) => console.log(err));
 	}, []);
-	const confirmOrder = () => {
-		console.log('Click from admin');
+	const confirmOrder = (id) => {
+		axios
+			.get(`https://phassignment10.herokuapp.com/order/updateorder/${id}`)
+			.then((res) => {
+				if (res.status === 200) {
+					const filterUpdateOrder = allOrder.map((order) => {
+						if (order._id === id) {
+							order.status = 'confirm';
+						}
+						return order;
+					});
+					setAllOrder(filterUpdateOrder);
+					toast.success('Order Confirm successfully');
+				}
+			})
+			.catch((err) => console.log(err));
 	};
 	return (
 		<div>
@@ -64,7 +79,19 @@ function Admin() {
 								{allOrder.length === 0 && <Spinner />}
 								{allOrder.map((order, index) => (
 									<Order key={index} order={order}>
-										<button onClick={confirmOrder}>Confirm</button>
+										{/* Confirm Order */}
+										{order.status === 'confirm' ? (
+											<button disabled className="btn btn-danger">
+												Confirmed
+											</button>
+										) : (
+											<button
+												className="btn btn-primary"
+												onClick={() => confirmOrder(order._id)}
+											>
+												Confirm
+											</button>
+										)}
 									</Order>
 								))}
 							</tbody>

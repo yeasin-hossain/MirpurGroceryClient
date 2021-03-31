@@ -5,7 +5,6 @@ import Product from './Product';
 
 function Home() {
 	const { products } = useContext(ProductContext);
-	console.log(products.length);
 	return (
 		<div className="d-flex flex-wrap justify-content-center">
 			{products.length === 0 && <Spinner />}

@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 import { ProductContext } from '../productContext/ProductContext';
 import Spinner from '../Spinner/Spinner';
 import Order from './Order';
@@ -13,8 +14,19 @@ function AllOrders() {
 			.then((res) => setAllOrder(res.data))
 			.catch((err) => console.log(err));
 	}, [user]);
-	const removeOrder = () => {
-		console.log('call from order');
+	const removeOrder = (id) => {
+		axios
+			.get(`https://phassignment10.herokuapp.com/order/deleteorder/${id}`)
+			.then((res) => {
+				if (res.status === 200) {
+					const filterDeleteOrder = allOrder.filter(
+						(order) => order._id !== id
+					);
+					setAllOrder(filterDeleteOrder);
+					toast.success('Order deleted successfully');
+				}
+			})
+			.catch((err) => console.log(err));
 	};
 	return (
 		<div>
@@ -35,7 +47,19 @@ function AllOrders() {
 				<tbody>
 					{allOrder.map((order, index) => (
 						<Order key={index} order={order}>
-							<button onClick={removeOrder}>Remove</button>
+							{/* Only Pending Order can delete */}
+							{order.status === 'pending' ? (
+								<button
+									className="btn btn-danger"
+									onClick={() => removeOrder(order._id)}
+								>
+									Remove
+								</button>
+							) : (
+								<button disabled className="btn btn-danger">
+									Remove
+								</button>
+							)}
 						</Order>
 					))}
 				</tbody>
