@@ -2,9 +2,11 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Admin from './components/Admin/Admin';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
-import Order from './components/Order/Order';
+import AllOrders from './components/Order/AllOrders';
 import PrivateRoute from './components/Routes/PrivateRoute';
 import { ToastContainer } from 'react-toastify';
+import Checkout from './components/Order/Checkout';
+import Join from './components/auth/Join';
 function App() {
 	return (
 		<div className="container">
@@ -14,8 +16,14 @@ function App() {
 					<Route exact path="/">
 						<Home />
 					</Route>
+					<Route path="/login">
+						<Join />
+					</Route>
 					<PrivateRoute path="/order">
-						<Order />
+						<AllOrders />
+					</PrivateRoute>
+					<PrivateRoute path="/checkout/:id">
+						<Checkout />
 					</PrivateRoute>
 					<PrivateRoute path="/admin">
 						<Admin />

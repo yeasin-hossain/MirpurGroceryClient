@@ -3,6 +3,7 @@ import { createContext, useEffect, useState } from 'react';
 export const ProductContext = createContext();
 export const ProductProvider = (props) => {
 	const [products, setProducts] = useState([]);
+	const [user, setUser] = useState({});
 
 	useEffect(() => {
 		const fetchProducts = async () => {
@@ -17,6 +18,8 @@ export const ProductProvider = (props) => {
 	const allContexts = {
 		products,
 		setProducts,
+		user,
+		setUser,
 	};
 	return (
 		<ProductContext.Provider value={allContexts}>

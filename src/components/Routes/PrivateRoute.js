@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Redirect, Route } from 'react-router';
+import { ProductContext } from '../productContext/ProductContext';
 
 function PrivateRoute({ children, ...rest }) {
+	const { user } = useContext(ProductContext);
 	return (
 		<Route
 			{...rest}
 			render={({ location }) =>
-				true ? (
+				user.isLoggedIn ? (
 					children
 				) : (
 					<Redirect

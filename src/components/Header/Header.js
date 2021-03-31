@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { ProductContext } from '../productContext/ProductContext';
 
 function Header() {
+	const { user } = useContext(ProductContext);
 	return (
 		<div>
 			<nav className="navbar navbar-expand-lg navbar-light bg-light ">
@@ -48,6 +50,21 @@ function Header() {
 									Admin
 								</Link>
 							</li>
+							{user.isLoggedIn ? (
+								<li className="nav-item">
+									<button className="btn btn-primary">{user.name}</button>
+								</li>
+							) : (
+								<li className="nav-item">
+									<Link
+										className="btn btn-primary"
+										aria-current="page"
+										to="/login"
+									>
+										Join
+									</Link>
+								</li>
+							)}
 						</ul>
 					</div>
 				</div>

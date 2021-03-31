@@ -1,11 +1,12 @@
 import axios from 'axios';
-import React from 'react';
+import React, { useContext } from 'react';
 import { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { toast } from 'react-toastify';
+import { ProductContext } from '../productContext/ProductContext';
 function AddProduct() {
 	const [product, setProduct] = useState({});
-
+	const { products, setProducts } = useContext(ProductContext);
 	// Add Product to state
 	const handleAddProduct = (e) => {
 		if (e.target.name === 'name') {
@@ -41,6 +42,7 @@ function AddProduct() {
 						if (result.status === 200) {
 							toast.success('Product Upload Successfully!');
 							setProduct({});
+							setProducts([result.data, ...products]);
 							e.target.image.value = '';
 						} else {
 							toast.success('SomeThing Want Wrong, Please Try Again later!');
