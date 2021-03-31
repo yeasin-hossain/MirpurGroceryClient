@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useContext } from 'react';
 import { toast } from 'react-toastify';
 import { ProductContext } from '../productContext/ProductContext';
+import Spinner from '../Spinner/Spinner';
 import Product from './Product';
 
 function ManageProducts() {
@@ -31,6 +32,7 @@ function ManageProducts() {
 					</tr>
 				</thead>
 				<tbody>
+					{products.length === 0 && <Spinner />}
 					{products.map((product) => (
 						<Product
 							key={product._id}

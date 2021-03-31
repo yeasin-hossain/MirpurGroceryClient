@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { ProductContext } from '../productContext/ProductContext';
+
 function Checkout() {
 	const [product, setProduct] = useState({});
 	const { name, price, image, _id } = product;
@@ -10,6 +11,7 @@ function Checkout() {
 	const { email, uuid } = user;
 	const { id } = useParams();
 	const history = useHistory();
+
 	useEffect(() => {
 		axios(
 			`https://phassignment10.herokuapp.com/product/singleproduct/${id}`
@@ -59,10 +61,10 @@ function Checkout() {
 							<h3>{name}</h3>
 						</td>
 						<td>
-							<h3>1</h3>
+							<h3>{name && 1}</h3>
 						</td>
 						<td>
-							<h3>$ {price}</h3>
+							<h3>${price}</h3>
 						</td>
 					</tr>
 					<tr>

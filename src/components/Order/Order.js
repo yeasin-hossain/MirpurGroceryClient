@@ -14,9 +14,9 @@ function Order(props) {
 		<>
 			<tr>
 				<td>{productName}</td>
-				<td>{quantity}</td>
 				<td>{productPrice}</td>
 				<td>{totalPrice}</td>
+				<td>{quantity}</td>
 				<td>{userEmail}</td>
 				<td>{date}</td>
 				<td>{status}</td>

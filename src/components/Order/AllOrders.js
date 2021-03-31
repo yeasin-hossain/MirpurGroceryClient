@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import { ProductContext } from '../productContext/ProductContext';
+import Spinner from '../Spinner/Spinner';
 import Order from './Order';
 
 function AllOrders() {
@@ -30,6 +31,7 @@ function AllOrders() {
 						<th>ACtion</th>
 					</tr>
 				</thead>
+				{allOrder.length === 0 && <Spinner />}
 				<tbody>
 					{allOrder.map((order, index) => (
 						<Order key={index} order={order}>

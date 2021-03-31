@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link, Route } from 'react-router-dom';
 import Order from '../Order/Order';
+import Spinner from '../Spinner/Spinner';
 import AddProduct from './AddProduct';
 import ManageProducts from './ManageProducts';
 
@@ -60,6 +61,7 @@ function Admin() {
 								</tr>
 							</thead>
 							<tbody>
+								{allOrder.length === 0 && <Spinner />}
 								{allOrder.map((order, index) => (
 									<Order key={index} order={order}>
 										<button onClick={confirmOrder}>Confirm</button>
