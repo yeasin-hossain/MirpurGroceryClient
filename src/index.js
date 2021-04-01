@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.css';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import { ProductProvider } from './components/productContext/ProductContext';
-
+import './components/Style/BaseStyle.css';
 ReactDOM.render(
 	<ProductProvider>
 		<React.StrictMode>

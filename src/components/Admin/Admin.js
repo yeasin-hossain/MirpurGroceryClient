@@ -32,11 +32,26 @@ function Admin() {
 			})
 			.catch((err) => console.log(err));
 	};
+
+	const removeOrder = (id) => {
+		axios
+			.get(`https://phassignment10.herokuapp.com/order/deleteorder/${id}`)
+			.then((res) => {
+				if (res.status === 200) {
+					const filterDeleteOrder = allOrder.filter(
+						(order) => order._id !== id
+					);
+					setAllOrder(filterDeleteOrder);
+					toast.success('Order delete successfully');
+				}
+			})
+			.catch((err) => console.log(err));
+	};
 	return (
 		<div>
 			<div className="row gutter-3">
 				<div className="col-md-3 border p-2">
-					<div className="menu d-flex flex-column ">
+					<div className="menu d-flex flex-column adminDash">
 						<Link className="btn btn-primary m-3" to="/admin/manage">
 							Manage Product
 						</Link>
@@ -81,16 +96,27 @@ function Admin() {
 									<Order key={index} order={order}>
 										{/* Confirm Order */}
 										{order.status === 'confirm' ? (
-											<button disabled className="btn btn-danger">
-												Confirmed
+											<button
+												className="btn btn-danger my-1"
+												onClick={() => removeOrder(order._id)}
+											>
+												Delete
 											</button>
 										) : (
-											<button
-												className="btn btn-primary"
-												onClick={() => confirmOrder(order._id)}
-											>
-												Confirm
-											</button>
+											<>
+												<button
+													className="btn btn-primary"
+													onClick={() => confirmOrder(order._id)}
+												>
+													Confirm
+												</button>
+												<button
+													className="btn btn-danger my-1"
+													onClick={() => removeOrder(order._id)}
+												>
+													Delete
+												</button>
+											</>
 										)}
 									</Order>
 								))}

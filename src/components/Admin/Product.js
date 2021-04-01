@@ -8,10 +8,10 @@ function Product({ product, deleteProduct }) {
 				<td>
 					<img style={{ width: '100px', height: '100px' }} src={image} alt="" />
 				</td>
-				<td>{name}</td>
-				<td>{price}</td>
-				<td>{weight}</td>
-				<td>
+				<td className="p-1 align-middle">{name}</td>
+				<td className="p-1 align-middle">{price}</td>
+				<td className="p-1 align-middle">{weight}</td>
+				<td className="p-1 align-middle">
 					<button className="btn btn-danger" onClick={() => deleteProduct(_id)}>
 						Delete <CgRemove />
 					</button>

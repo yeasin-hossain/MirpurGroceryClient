@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { ProductContext } from '../productContext/ProductContext';
+import Title from '../Title/Title';
 
 function Checkout() {
 	const [product, setProduct] = useState({});
@@ -30,15 +31,18 @@ function Checkout() {
 			quantity: 1,
 			date: new Date(),
 		};
-		axios.post(`http://localhost:4100/order`, orderInfo).then((res) => {
-			if (res.status === 200) {
-				toast.success('Your Order We Receive Successfully! Lets Shop More ');
-				history.push('/');
-			}
-		});
+		axios
+			.post(`https://phassignment10.herokuapp.com/order`, orderInfo)
+			.then((res) => {
+				if (res.status === 200) {
+					toast.success('Your Order We Receive Successfully! Lets Shop More ');
+					history.push('/');
+				}
+			});
 	};
 	return (
 		<div>
+			<Title title={name} image={image} />
 			<table className="table mt-5">
 				<thead>
 					<tr>

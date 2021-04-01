@@ -6,12 +6,15 @@ function Product({ product }) {
 	const { name, price, image, _id } = product;
 	return (
 		<div className="m-3">
-			<Card style={{ width: '18rem' }}>
+			<Card
+				style={{ width: '18rem' }}
+				className="border-0 shadow-sm productCard mainCard rounded"
+			>
 				<Card.Img variant="top" src={image} style={{ height: '250px' }} />
 				<Card.Body>
-					<Card.Title>{name}</Card.Title>
-					<div className="d-flex justify-content-between mt-5">
-						<Card.Title>$ {price}</Card.Title>
+					<Card.Text>{name}</Card.Text>
+					<div className="d-flex justify-content-between mt-4">
+						<Card.Text>${price}</Card.Text>
 						<Link className="btn btn-primary" to={`/checkout/${_id}`}>
 							Buy Now <GiShoppingCart className="text-light mx-1" />
 						</Link>

@@ -1,0 +1,27 @@
+:root {
+	--mainBgColor: aliceblue;
+}
+body,
+.Header {
+	background-color: var(--mainBgColor);
+}
+
+.productCard img {
+	transition: 300ms !important;
+}
+.productCard img:hover {
+	transition: 300ms !important;
+	transform: scale(0.95) !important;
+}
+.mainCard {
+	min-height: 400px !important;
+}
+.mainCard p {
+	font-weight: 500;
+}
+
+/* Admin */
+.adminDash {
+	position: sticky;
+	top: 100px;
+}

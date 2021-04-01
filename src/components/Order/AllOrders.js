@@ -30,7 +30,8 @@ function AllOrders() {
 	};
 	return (
 		<div>
-			<table className="table">
+			{allOrder.length === 0 && <Spinner />}
+			<table className="table table-striped">
 				<thead>
 					<tr>
 						<th>Name</th>
@@ -43,7 +44,6 @@ function AllOrders() {
 						<th>ACtion</th>
 					</tr>
 				</thead>
-				{allOrder.length === 0 && <Spinner />}
 				<tbody>
 					{allOrder.map((order, index) => (
 						<Order key={index} order={order}>

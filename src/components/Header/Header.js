@@ -6,7 +6,7 @@ function Header() {
 	const { user } = useContext(ProductContext);
 	return (
 		<div className="sticky-top">
-			<nav className="navbar navbar-expand-lg navbar-light bg-light ">
+			<nav className="navbar navbar-expand-lg navbar-light Header">
 				<div className="container-fluid">
 					<Link className="navbar-brand" to="/">
 						<h1>Mirpur Grocery Needs</h1>
@@ -17,12 +17,12 @@ function Header() {
 						id="navbarSupportedContent"
 					>
 						<ul className="navbar-nav  me-auto mb-2 mb-lg-0">
-							<li className="nav-item">
+							<li className="nav-item mx-3">
 								<Link className="nav-link active" aria-current="page" to="/">
 									Home
 								</Link>
 							</li>
-							<li className="nav-item">
+							<li className="nav-item mx-3">
 								<Link
 									className="nav-link active"
 									aria-current="page"
@@ -31,7 +31,7 @@ function Header() {
 									Order
 								</Link>
 							</li>
-							<li className="nav-item">
+							<li className="nav-item mx-3">
 								<Link
 									className="nav-link active"
 									aria-current="page"
