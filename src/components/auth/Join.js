@@ -24,7 +24,7 @@ function Join() {
 			<h1 className=" text-center my-5 loginText">Press The Icon To Join</h1>
 			<button
 				onClick={joinWithGoogle}
-				className="btn d-block m-auto shadow  px-5 bg-white rounded-lg loginBtn"
+				className="btn d-block m-auto   px-5 bg-white loginBtn"
 			>
 				<FcGoogle style={{ fontSize: '55px' }} />
 			</button>

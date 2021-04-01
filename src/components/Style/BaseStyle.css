@@ -37,6 +37,11 @@ body,
 	-webkit-text-fill-color: transparent;
 	-moz-text-fill-color: transparent;
 }
+.loginBtn {
+	border-radius: 50px;
+	background: linear-gradient(145deg, #d8dfe6, #ffffff);
+	box-shadow: 16px 16px 46px #c0c6cc, -16px -16px 46px #ffffff;
+}
 /* Admin */
 .adminDash {
 	position: sticky;
