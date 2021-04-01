@@ -15,7 +15,7 @@ body,
 	transform: scale(0.95) !important;
 }
 .mainCard {
-	min-height: 400px !important;
+	min-height: 450px !important;
 }
 .mainCard p {
 	font-weight: 500;
@@ -34,13 +34,12 @@ body,
 	text-align: center;
 }
 
-/* .table td,
+.table td,
 .table th {
-	padding: 12px 15px;
-	border: 1px solid #ddd;
 	text-align: center;
 	font-size: 16px;
-} */
+	vertical-align: middle !important;
+}
 
 .table th {
 	background-color: #0069d9;
