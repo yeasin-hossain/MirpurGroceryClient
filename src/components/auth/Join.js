@@ -21,10 +21,11 @@ function Join() {
 	};
 	return (
 		<div>
-			<h1 className="text-warning text-center my-5">
-				For Join, Just Click On Google Icon
-			</h1>
-			<button onClick={joinWithGoogle} className="btn d-block m-auto">
+			<h1 className=" text-center my-5 loginText">Press The Icon To Join</h1>
+			<button
+				onClick={joinWithGoogle}
+				className="btn d-block m-auto shadow  px-5 bg-white rounded-lg loginBtn"
+			>
 				<FcGoogle style={{ fontSize: '55px' }} />
 			</button>
 		</div>

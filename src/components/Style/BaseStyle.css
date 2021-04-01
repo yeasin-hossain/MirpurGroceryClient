@@ -21,6 +21,22 @@ body,
 	font-weight: 500;
 }
 
+/* Login Google logo color gradient */
+.loginText {
+	background-color: #ffc107;
+	background-image: linear-gradient(
+		-120deg,
+		#4285f4,
+		#34a853,
+		#fbbc05,
+		#ea4335
+	);
+	background-size: 100%;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-moz-text-fill-color: transparent;
+}
 /* Admin */
 .adminDash {
 	position: sticky;
