@@ -28,42 +28,47 @@ function AllOrders() {
 			})
 			.catch((err) => console.log(err));
 	};
+
 	return (
 		<div>
 			{allOrder.length === 0 && <Spinner />}
-			<table className="table table-striped">
-				<thead>
-					<tr>
-						<th>Name</th>
-						<th>Price</th>
-						<th>Total Price</th>
-						<th>Quantity</th>
-						<th>Email</th>
-						<th>Date</th>
-						<th>Status</th>
-						<th>ACtion</th>
-					</tr>
-				</thead>
-				<tbody>
-					{allOrder.map((order, index) => (
-						<Order key={index} order={order}>
-							{/* Only Pending Order can delete */}
-							{order.status === 'pending' ? (
-								<button
-									className="btn btn-danger"
-									onClick={() => removeOrder(order._id)}
-								>
-									Remove
-								</button>
-							) : (
-								<button disabled className="btn btn-danger">
-									Remove
-								</button>
-							)}
-						</Order>
-					))}
-				</tbody>
-			</table>
+			{allOrder.length === 0 ? (
+				<h1 className="text-center mt-5">You Not Yet Order Anything</h1>
+			) : (
+				<table className="table table-striped">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Price</th>
+							<th>Total Price</th>
+							<th>Quantity</th>
+							<th>Email</th>
+							<th>Date</th>
+							<th>Status</th>
+							<th>ACtion</th>
+						</tr>
+					</thead>
+					<tbody>
+						{allOrder.map((order, index) => (
+							<Order key={index} order={order}>
+								{/* Only Pending Order can delete */}
+								{order.status === 'pending' ? (
+									<button
+										className="btn btn-danger"
+										onClick={() => removeOrder(order._id)}
+									>
+										Remove
+									</button>
+								) : (
+									<button disabled className="btn btn-danger">
+										Remove
+									</button>
+								)}
+							</Order>
+						))}
+					</tbody>
+				</table>
+			)}
 		</div>
 	);
 }
