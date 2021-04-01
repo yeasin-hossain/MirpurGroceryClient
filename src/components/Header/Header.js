@@ -48,7 +48,7 @@ function Header() {
 									<li className="nav-item mx-3">
 										<img
 											className="rounded-circle"
-											style={{ width: '50px' }}
+											style={{ width: '40px' }}
 											src={user.image}
 											alt=""
 										/>
