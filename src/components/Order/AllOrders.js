@@ -42,6 +42,7 @@ function AllOrders() {
 							<th>Price</th>
 							<th>Total Price</th>
 							<th>Quantity</th>
+							<th>Weight</th>
 							<th>Email</th>
 							<th>Date</th>
 							<th>Status</th>

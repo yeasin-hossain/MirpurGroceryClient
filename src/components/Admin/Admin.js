@@ -52,7 +52,7 @@ function Admin() {
 	return (
 		<div>
 			<div className="row gutter-3">
-				<div className="col-md-3 border p-2">
+				<div className="col-md-3  p-2">
 					<div className="menu d-flex flex-column adminDash">
 						<Link className="btn btn-primary m-3" to="/admin/manage">
 							Manage Product <AiOutlineFormatPainter className="mx-3" />
@@ -68,7 +68,7 @@ function Admin() {
 						</Link>
 					</div>
 				</div>
-				<div className="col-md-9 border">
+				<div className="col-md-9 mt-4">
 					<Route path="/admin/manage">
 						<ManageProducts />
 					</Route>
@@ -86,6 +86,7 @@ function Admin() {
 									<th>Price</th>
 									<th>Total Price</th>
 									<th>Quantity</th>
+									<th>Weight</th>
 									<th>Email</th>
 									<th>Date</th>
 									<th>Status</th>

@@ -4,6 +4,7 @@ function Order(props) {
 	const {
 		productName,
 		quantity,
+		weight,
 		productPrice,
 		totalPrice,
 		userEmail,
@@ -29,6 +30,9 @@ function Order(props) {
 				</td>
 				<td className="align-middle" data-label="Quantity">
 					{quantity}
+				</td>
+				<td className="align-middle" data-label="Weight">
+					{weight}
 				</td>
 				<td className="align-middle" data-label="Email">
 					{userEmail}

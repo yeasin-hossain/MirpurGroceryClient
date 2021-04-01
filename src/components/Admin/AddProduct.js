@@ -84,7 +84,7 @@ function AddProduct() {
 					<Form.Control
 						required
 						value={product.weight || ''}
-						type="number"
+						type="text"
 						name="weight"
 						onChange={(e) => handleAddProduct(e)}
 					/>

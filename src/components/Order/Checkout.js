@@ -7,7 +7,7 @@ import Title from '../Title/Title';
 
 function Checkout() {
 	const [product, setProduct] = useState({});
-	const { name, price, image, _id } = product;
+	const { name, price, weight, image, _id } = product;
 	const { user } = useContext(ProductContext);
 	const { email, uuid } = user;
 	const { id } = useParams();
@@ -29,6 +29,7 @@ function Checkout() {
 			productPrice: price,
 			totalPrice: 1 * price,
 			quantity: 1,
+			weight: weight,
 			date: new Date(),
 		};
 		axios
@@ -49,6 +50,7 @@ function Checkout() {
 						<th>Image</th>
 						<th>Description</th>
 						<th>Quantity</th>
+						<th>Weight</th>
 						<th>Price</th>
 					</tr>
 				</thead>
@@ -68,11 +70,14 @@ function Checkout() {
 							<h3>{name && 1}</h3>
 						</td>
 						<td>
+							<h3>{weight}</h3>
+						</td>
+						<td>
 							<h3>${price}</h3>
 						</td>
 					</tr>
 					<tr>
-						<td colSpan="3">
+						<td colSpan="4">
 							<h1>Total</h1>
 						</td>
 						<td>
@@ -80,6 +85,7 @@ function Checkout() {
 						</td>
 					</tr>
 					<tr>
+						<td></td>
 						<td></td>
 						<td></td>
 						<td></td>
