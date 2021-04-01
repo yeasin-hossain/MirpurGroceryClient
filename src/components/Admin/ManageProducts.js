@@ -19,6 +19,7 @@ function ManageProducts() {
 			}
 		});
 	};
+	// table table-striped text-center
 	return (
 		<div>
 			<table className="table table-striped text-center">

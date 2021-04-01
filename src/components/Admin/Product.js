@@ -5,13 +5,19 @@ function Product({ product, deleteProduct }) {
 	return (
 		<>
 			<tr>
-				<td>
+				<td data-label="Image">
 					<img style={{ width: '100px', height: '100px' }} src={image} alt="" />
 				</td>
-				<td className="p-1 align-middle">{name}</td>
-				<td className="p-1 align-middle">{price}</td>
-				<td className="p-1 align-middle">{weight}</td>
-				<td className="p-1 align-middle">
+				<td data-label="Name" className="p-1 align-middle">
+					{name}
+				</td>
+				<td data-label="Price" className="p-1 align-middle">
+					{price}
+				</td>
+				<td data-label="Weight" className="p-1 align-middle">
+					{weight}
+				</td>
+				<td data-label="Action" className="p-1 align-middle">
 					<button className="btn btn-danger" onClick={() => deleteProduct(_id)}>
 						Delete <CgRemove />
 					</button>

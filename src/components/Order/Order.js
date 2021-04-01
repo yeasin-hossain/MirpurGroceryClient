@@ -13,14 +13,14 @@ function Order(props) {
 	return (
 		<>
 			<tr>
-				<td>{productName}</td>
-				<td>{productPrice}</td>
-				<td>{totalPrice}</td>
-				<td>{quantity}</td>
-				<td>{userEmail}</td>
-				<td>{date}</td>
-				<td>{status}</td>
-				<td>{props.children}</td>
+				<td data-label="Name">{productName}</td>
+				<td data-label="Price">${productPrice}</td>
+				<td data-label="Total Price">${totalPrice}</td>
+				<td data-label="Quantity">{quantity}</td>
+				<td data-label="Email">{userEmail}</td>
+				<td data-label="Order Date">{date}</td>
+				<td data-label="Status">{status}</td>
+				<td data-label="Action">{props.children}</td>
 			</tr>
 		</>
 	);
