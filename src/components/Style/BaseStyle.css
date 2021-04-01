@@ -96,3 +96,19 @@ body,
 		text-align: left;
 	}
 }
+@media (max-width: 425px) {
+	.sticky-top {
+		position: relative;
+	}
+	.Header .navbar-brand h1 {
+		font-size: 1.5rem;
+	}
+	.Header .navbar-nav {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.Header .navbar-nav li {
+		margin: 5px 0;
+	}
+}

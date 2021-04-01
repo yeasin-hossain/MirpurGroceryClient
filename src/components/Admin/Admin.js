@@ -6,7 +6,9 @@ import Order from '../Order/Order';
 import Spinner from '../Spinner/Spinner';
 import AddProduct from './AddProduct';
 import ManageProducts from './ManageProducts';
-
+import { BiMessageSquareAdd } from 'react-icons/bi';
+import { RiEdit2Fill } from 'react-icons/ri';
+import { AiOutlineFormatPainter } from 'react-icons/ai';
 function Admin() {
 	const [allOrder, setAllOrder] = useState([]);
 	useEffect(() => {
@@ -53,16 +55,16 @@ function Admin() {
 				<div className="col-md-3 border p-2">
 					<div className="menu d-flex flex-column adminDash">
 						<Link className="btn btn-primary m-3" to="/admin/manage">
-							Manage Product
+							Manage Product <AiOutlineFormatPainter className="mx-3" />
 						</Link>
 						<Link className="btn btn-primary m-3" to="/admin/addproduct">
-							Add Product
+							Add Product <BiMessageSquareAdd className="mx-3" />
 						</Link>
 						<Link className="btn btn-primary m-3" to="/admin/updateproduct">
-							Edit Product
+							Edit Product <RiEdit2Fill className="mx-3" />
 						</Link>
 						<Link className="btn btn-primary m-3" to="/admin/manageorder">
-							Manage Order
+							Manage Order <AiOutlineFormatPainter className="mx-3" />
 						</Link>
 					</div>
 				</div>
