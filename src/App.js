@@ -7,9 +7,11 @@ import PrivateRoute from './components/Routes/PrivateRoute';
 import { ToastContainer } from 'react-toastify';
 import Checkout from './components/Order/Checkout';
 import Join from './components/auth/Join';
+import Title from './components/Title/Title';
 function App() {
 	return (
 		<div className="container">
+			<Title />
 			<Router>
 				<Header />
 				<Switch>

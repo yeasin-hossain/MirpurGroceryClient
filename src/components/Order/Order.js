@@ -11,13 +11,8 @@ function Order(props) {
 		status,
 	} = props.order;
 
-	// Date Convert To readable format
-	const convertDate = new Date(date);
-	const getDate = (da) => {
-		let finalDate = da.toJSON().slice(0, 10);
-		finalDate =
-			date.slice(8, 10) + '/' + date.slice(5, 7) + '/' + date.slice(0, 4);
-		return finalDate;
+	const getDate = () => {
+		return date.slice(8, 10) + '/' + date.slice(5, 7) + '/' + date.slice(0, 4);
 	};
 
 	return (
@@ -39,7 +34,7 @@ function Order(props) {
 					{userEmail}
 				</td>
 				<td className="align-middle" data-label="Order Date">
-					{getDate(convertDate)}
+					{getDate()}
 				</td>
 				<td className="align-middle" data-label="Status">
 					{status}
