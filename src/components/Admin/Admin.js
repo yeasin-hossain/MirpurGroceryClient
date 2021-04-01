@@ -52,7 +52,7 @@ function Admin() {
 	return (
 		<div>
 			<div className="row gutter-3">
-				<div className="col-md-3  p-2">
+				<div className="col-md-3 p-2">
 					<div className="menu d-flex flex-column adminDash">
 						<Link className="btn btn-primary m-3" to="/admin/manage">
 							Manage Product <AiOutlineFormatPainter className="mx-3" />
@@ -79,6 +79,7 @@ function Admin() {
 						<h1>Update</h1>
 					</Route>
 					<Route path="/admin/manageorder">
+						{allOrder.length === 0 && <Spinner />}
 						<table className="table">
 							<thead>
 								<tr>
@@ -94,7 +95,6 @@ function Admin() {
 								</tr>
 							</thead>
 							<tbody>
-								{allOrder.length === 0 && <Spinner />}
 								{allOrder.map((order, index) => (
 									<Order key={index} order={order}>
 										{/* Confirm Order */}
