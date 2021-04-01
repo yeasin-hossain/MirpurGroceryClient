@@ -11,7 +11,7 @@ function Product({ product }) {
 				className="border-0 shadow-sm productCard mainCard rounded"
 			>
 				<Card.Img variant="top" src={image} style={{ height: '250px' }} />
-				<Card.Body>
+				<Card.Body className="d-flex flex-column justify-content-between">
 					<Card.Text>{name}</Card.Text>
 					<Card.Text>{weight}</Card.Text>
 					<div className="d-flex justify-content-between mt-4">
