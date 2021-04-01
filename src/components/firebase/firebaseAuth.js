@@ -34,3 +34,12 @@ export const joinGoogle = () => {
 			return err;
 		});
 };
+// Logout
+export const Logout = () => {
+	return firebase
+		.auth()
+		.signOut()
+		.then(() => {
+			return true;
+		});
+};

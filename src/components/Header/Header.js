@@ -1,9 +1,19 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { ProductContext } from '../productContext/ProductContext';
+import { FiLogOut } from 'react-icons/fi';
+import { Logout } from '../firebase/firebaseAuth';
 
 function Header() {
-	const { user } = useContext(ProductContext);
+	const { user, setUser } = useContext(ProductContext);
+	const history = useHistory();
+	const logOutBtn = () => {
+		Logout().then(() => {
+			setUser({});
+			history.push('/');
+		});
+	};
+
 	return (
 		<div className="sticky-top">
 			<nav className="navbar navbar-expand-lg navbar-light Header">
@@ -42,9 +52,6 @@ function Header() {
 							</li>
 							{user.isLoggedIn ? (
 								<>
-									<li className="nav-item">
-										<button className="btn btn-primary">{user.name}</button>
-									</li>
 									<li className="nav-item mx-3">
 										<img
 											className="rounded-circle"
@@ -52,6 +59,12 @@ function Header() {
 											src={user.image}
 											alt=""
 										/>
+									</li>
+									<li className="nav-item">
+										<button className="btn btn-primary" onClick={logOutBtn}>
+											{user.name}
+											<FiLogOut className="ml-2 text-warning" />
+										</button>
 									</li>
 								</>
 							) : (
