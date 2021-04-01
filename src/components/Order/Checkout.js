@@ -4,6 +4,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { ProductContext } from '../productContext/ProductContext';
 import Title from '../Title/Title';
+import moment from 'moment';
 
 function Checkout() {
 	const [product, setProduct] = useState({});
@@ -30,7 +31,7 @@ function Checkout() {
 			totalPrice: 1 * price,
 			quantity: 1,
 			weight: weight,
-			date: new Date(),
+			date: moment().format('MMMM Do YYYY, h:mm:ss'),
 		};
 		axios
 			.post(`https://phassignment10.herokuapp.com/order`, orderInfo)

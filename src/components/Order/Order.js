@@ -12,10 +12,6 @@ function Order(props) {
 		status,
 	} = props.order;
 
-	const getDate = () => {
-		return date.slice(8, 10) + '/' + date.slice(5, 7) + '/' + date.slice(0, 4);
-	};
-
 	return (
 		<>
 			<tr>
@@ -38,7 +34,7 @@ function Order(props) {
 					{userEmail}
 				</td>
 				<td className="align-middle" data-label="Order Date">
-					{getDate()}
+					{date}
 				</td>
 				<td className="align-middle" data-label="Status">
 					{status}
