@@ -41,9 +41,19 @@ function Header() {
 								</Link>
 							</li>
 							{user.isLoggedIn ? (
-								<li className="nav-item">
-									<button className="btn btn-primary">{user.name}</button>
-								</li>
+								<>
+									<li className="nav-item">
+										<button className="btn btn-primary">{user.name}</button>
+									</li>
+									<li className="nav-item mx-3">
+										<img
+											className="rounded-circle"
+											style={{ width: '50px' }}
+											src={user.image}
+											alt=""
+										/>
+									</li>
+								</>
 							) : (
 								<li className="nav-item">
 									<Link

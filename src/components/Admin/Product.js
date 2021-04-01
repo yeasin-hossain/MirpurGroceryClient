@@ -6,7 +6,12 @@ function Product({ product, deleteProduct }) {
 		<>
 			<tr>
 				<td data-label="Image">
-					<img style={{ width: '100px', height: '100px' }} src={image} alt="" />
+					<img
+						style={{ width: '70px', height: '70px' }}
+						className="rounded"
+						src={image}
+						alt=""
+					/>
 				</td>
 				<td data-label="Name" className="p-1 align-middle">
 					{name}
