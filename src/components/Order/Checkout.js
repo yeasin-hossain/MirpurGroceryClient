@@ -57,24 +57,24 @@ function Checkout() {
 				</thead>
 				<tbody>
 					<tr>
-						<td>
+						<td data-label="Image">
 							<img
 								src={image}
 								style={{ width: '75px', height: '75px' }}
 								alt=""
 							/>
 						</td>
-						<td>
+						<td data-label="Name">
 							<h3>{name}</h3>
 						</td>
-						<td>
+						<td data-label="Quantity">
 							<h3>{name && 1}</h3>
 						</td>
-						<td>
+						<td data-label="Weight">
 							<h3>{weight}</h3>
 						</td>
-						<td>
-							<h3>${price}</h3>
+						<td data-label="Price">
+							<h3>৳{price}</h3>
 						</td>
 					</tr>
 					<tr>
@@ -82,15 +82,15 @@ function Checkout() {
 							<h1>Total</h1>
 						</td>
 						<td>
-							<h1>${price}</h1>
+							<h1>৳{price}</h1>
 						</td>
 					</tr>
 					<tr>
+						{/* <td></td>
 						<td></td>
 						<td></td>
-						<td></td>
-						<td></td>
-						<td>
+						<td></td> */}
+						<td colspan="5" style={{ textAlign: 'right' }}>
 							<button className="btn btn-primary" onClick={checkoutNow}>
 								Checkout
 							</button>

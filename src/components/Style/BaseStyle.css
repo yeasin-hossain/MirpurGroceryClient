@@ -114,6 +114,8 @@ body,
 		font-size: 15px;
 		font-weight: bold;
 		text-align: left;
+		top: 50%;
+		transform: translate(0, -50%);
 	}
 }
 @media (max-width: 425px) {

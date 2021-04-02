@@ -17,7 +17,7 @@ function Product({ product, deleteProduct }) {
 					{name}
 				</td>
 				<td data-label="Price" className="p-1 align-middle">
-					${price}
+					৳{price}
 				</td>
 				<td data-label="Weight" className="p-1 align-middle">
 					{weight}

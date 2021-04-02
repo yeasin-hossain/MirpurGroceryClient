@@ -19,10 +19,10 @@ function Order(props) {
 					{productName}
 				</td>
 				<td className="align-middle" data-label="Price">
-					${productPrice}
+					৳{productPrice}
 				</td>
 				<td className="align-middle" data-label="Total Price">
-					${totalPrice}
+					৳{totalPrice}
 				</td>
 				<td className="align-middle" data-label="Quantity">
 					{quantity}
